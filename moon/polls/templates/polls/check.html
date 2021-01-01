@@ -1,0 +1,227 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{{name1}}</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="{% static 'css/sb-admin-2.min.css'%}" rel="stylesheet">
+
+</head>
+<body id="page-top">
+    <!-- Project Card Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">{{name1}}</h6>
+        </div>
+        <div class="card-body">
+            <h4 class="small font-weight-bold">문진표 실시현황 <span
+                    class="float-right">{{number_all}}%</span></h4>
+            <div class="progress mb-4">
+                <div class="progress-bar bg-danger" role="progressbar" style="width:{{number_all}}%"
+                    aria-valuenow="{{number_all}}" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <h4 class="small font-weight-bold">현재 체온이 37.5도 이상입니까? <span
+                    class="float-right">아니요</span></h4>
+            <div class="progress mb-4">
+                <div class="progress-bar bg-warning" role="progressbar" style="width: {{count_1}}%"
+                    aria-valuenow="{{count_1}}" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <h4 class="small font-weight-bold">방역당국(보건소, 지자체)으로부터 PCR 검사대상자로 통보받은 적이 있습니까? <span
+                    class="float-right">아니요</span></h4>
+            <div class="progress mb-4">
+                <div class="progress-bar" role="progressbar" style="width: {{count_2}}%"
+                    aria-valuenow="{{count_2}}" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <h4 class="small font-weight-bold">고위험 시설을 방문한 적이 있습니까? <span
+                    class="float-right">아니요</span></h4>
+            <div class="progress mb-4">
+                <div class="progress-bar bg-info" role="progressbar" style="width: {{count_3}}%"
+                    aria-valuenow="{{count_3}}" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <h4 class="small font-weight-bold">확진자, 확진자 접촉자등과 만난적이 있습니까? <span
+                    class="float-right">아니요</span></h4>
+            <div class="progress">
+                <div class="progress-bar bg-success" role="progressbar" style="width:{{count_4}}%"
+                    aria-valuenow="{{count_4}}%" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+            <h4 class="small font-weight-bold" style="margin-top: 20px;">확진자가 다녀간 장소에 동선이 겹친 적이 있습니까? <span
+                class="float-right">아니요</span></h4>
+            <div class="progress mb-4">
+                <div class="progress-bar bg-warning" role="progressbar" style="width: {{count_5}}%"
+                    aria-valuenow="{{count_5}}" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <h4 class="small font-weight-bold">외부활동(종교집회, 동호회)에 참여한 적이 있습니까? <span
+                class="float-right">아니요</span></h4>
+            <div class="progress mb-4">
+                <div class="progress-bar bg-info" role="progressbar" style="width: {{count_6}}%"
+                    aria-valuenow="{{count_6}}%" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+            <h4 class="small font-weight-bold">동거 가족 중 설문문항 2~8 사항에 해당하는 가족이 있나요? <span
+                class="float-right">아니요</span></h4>
+            <div class="progress">
+                <div class="progress-bar bg-success" role="progressbar" style="width: {{count_7}}%;"
+                aria-valuenow="{{count_7}}%" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            <h4 class="small font-weight-bold" style="margin-top: 20px;">2~9번 답변 중 "예"라 답변하신 문항이 있으십니까? <span
+                class="float-right">아니요</span></h4>
+            <div class="progress mb-4">
+                <div class="progress-bar bg-warning" role="progressbar" style="width: {{count_8}}%"
+                aria-valuenow="{{count_8}}%" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+    </div>
+    
+
+
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">{{name1}}</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>이름</th>
+                                            <th>소속</th>
+                                            <th>계급</th>
+                                            <th>Q2</th>
+                                            <th>Q3</th>
+                                            <th>Q4</th>
+                                            <th>Q5</th>
+                                            <th>Q6</th>
+                                            <th>Q7</th>
+                                            <th>Q8</th>
+                                            <th>Q9</th>
+                                            <th>Q10</th>
+                                        </tr>
+                                    </thead>
+
+
+
+                                    <tbody>
+                                        {%for j in result%}
+                                        <tr>
+                                        {%for i in j%}
+                                        {% if i == '2'%}
+                                        <td style="background-color: #1cc88a; color:white">No</td>
+                                        {% elif i == '1'%}
+                                        <td style="background-color: #e74a3b; color:white">Yes</td>
+                                        {% else %}
+                                        <td>{{i}}</td>
+                                        {% endif %}
+                                        {% endfor %}
+                                        </tr>
+                                        {% endfor %}
+                                        {% for k in current%}
+                                        <tr>
+                                            {% for a in k %}
+                                            <td>{{a}}</td>
+                                            {% endfor %}
+                                            <td>미실시</td>
+                                            <td>미실시</td>
+                                            <td>미실시</td>
+                                            <td>미실시</td>
+                                            <td>미실시</td>
+                                            <td>미실시</td>
+                                            <td>미실시</td>
+                                            <td>미실시</td>
+                                            <td>미실시</td>
+                                        
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; K.S.H</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+

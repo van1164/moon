@@ -1,0 +1,498 @@
+{%load static%}
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <meta property="og:title" content="8사단 코로나19 사전 설문조사">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+    <title>8사단 코로나19 사전 설문조사</title>
+    <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/common.css'%}">
+</head>
+<body oncontextmenu="return false" onselectstart="return false"><div id="loading" style="display: none;"></div>
+	
+	<div id="wrap" class="container">
+<link href="{% static 'css/datepicker.css' %}" rel="stylesheet">
+
+<style type="text/css">
+	#header						{ background-color: #2056ac; }
+	.footer	.btn-start			{ background-color: #2056ac; }
+	.footer	.btn-next			{ background-color: #2056ac; }
+	.survey_sb_list .quest .required	{ color: #2056ac;}
+	.survey_sb_list	.quest .q	{ color: #2056ac; }
+	.survey_sb_list .questType3 .evalueType2 label > div.score > .circle-on { background-color: #2056ac; border-color: #2056ac;}
+	.survey_sb_list .answer-area .star-on { background-color: #2056ac; }
+	.survey_sb_list .answer-area .score-star .total-score { color: #2056ac; }
+	.survey_sb_list .answer-area .number-on { border-color: #2056ac; color: #2056ac;}
+	#pageView #thumb			{ background: #2056ac; }
+	#pageView .text				{ color: #2056ac; }
+	.form-control:focus { border-color: #2056ac; }
+	#rewardPhoneLayer .input-group	input[type=button] {background-color: #2056ac;}
+</style>
+
+
+<input type="hidden" id="pageCount" value="1">
+<input type="hidden" id="questCount" value="10">
+<input type="hidden" id="userQuestCount" value="10">
+<input type="hidden" id="bgColor" value="#2056ac">
+<input type="hidden" id="quick" value="y">
+
+<div id="header"><div class="title">8사단 코로나19 사전 설문조사</div></div>
+<div id="pageView" style="display:none">
+	<div class="track">
+		<div id="thumb"></div>
+	</div>
+		
+	<div class="text">
+		<span id="currentPage"></span>/<span id="totalPage"></span>
+	</div>
+</div>
+<div id="questView">
+	<form  action="finish" name="form" id="form" method="post">
+	{% csrf_token %}
+	<div class="survey_list">	
+
+		<div class="survey_sb_list page1" id="quest_main0_1" style="" optional="false">
+			<div class="quest">
+				<input type="hidden" class="quest_page" value="1">
+				<input type="hidden" name="quest_tc_1" id="quest_tc_1" value="2">
+				<input type="hidden" class="quest_evalue_type" value="1">
+				<input type="hidden" class="quest_answer_form" value="7">
+				<input type="hidden" name="answer_choice_cnt_1" id="answer_choice_cnt_1" value="1">
+                <input type="hidden" name="answer_input_cnt_1" id="answer_input_cnt_1" value="1">
+				<input type="hidden" name="answer_choice_min_1" id="answer_choice_min_1" value="1">
+
+				<div class="q">Q1</div>
+
+				<div class="cntn">
+					<pre>고유번호를 입력해주세요</pre>
+                    <p class="required">*필수 응답 문항</p>
+                    <p class="required">*예) 11</p>
+				</div>
+			</div>
+			<div class="answer-area clearfix">
+			<div class="answer questType2">
+				
+				<div>
+					<input type="text" class="quest_1_1 answerText form-control" id="quest_1_1_0" name="quest_1">
+				</div>
+			</div>
+			</div>
+		</div>
+
+		<div class="survey_sb_list page1" id="quest_main0_2" style="" optional="false">
+			<div class="quest">
+				<input type="hidden" class="quest_page" value="1">
+				<input type="hidden" name="quest_tc_2" id="quest_tc_2" value="1">
+				<input type="hidden" class="quest_evalue_type" value="1">
+				<input type="hidden" class="quest_answer_form" value="1">
+				<input type="hidden" name="answer_choice_cnt_2" id="answer_choice_cnt_2" value="1">
+                <input type="hidden" name="answer_input_cnt_2" id="answer_input_cnt_2" value="4">
+				<input type="hidden" name="answer_choice_min_2" id="answer_choice_min_2" value="1">
+
+				<div class="q">Q2</div>
+
+				<div class="cntn">
+					<pre>현재 체온이 37.5도 이상입니까?</pre>
+					<p class="required">*필수 응답 문항</p>
+				</div>
+			</div>
+
+			<div class="answer-area clearfix">
+
+			<div class="answer choice choice-9">
+				<div class="q">
+					<input type="radio" name="quest_2" id="quest_2_0" value="1"  questinfo="">
+				</div>
+				<div class="cntn">
+					<label for="quest_2_0" style="white-space: nowrap;">
+							예
+					</label>
+				</div>
+			</div>			
+			<div class="answer choice choice-9">
+				<div class="q">
+					<input type="radio" name="quest_2" id="quest_2_1" value="2" questinfo="">
+				</div>
+				<div class="cntn">
+					<label for="quest_2_1" style="white-space: nowrap;">
+							아니오
+					</label>
+				</div>
+			</div>			
+			</div>
+		</div>
+
+		<div class="survey_sb_list page1" id="quest_main0_3" style="" optional="false">
+			<div class="quest">
+				<input type="hidden" class="quest_page" value="1">
+				<input type="hidden" name="quest_tc_3" id="quest_tc_3" value="1">
+				<input type="hidden" class="quest_evalue_type" value="1">
+				<input type="hidden" class="quest_answer_form" value="1">
+				<input type="hidden" name="answer_choice_cnt_3" id="answer_choice_cnt_3" value="1">
+                <input type="hidden" name="answer_input_cnt_3" id="answer_input_cnt_3" value="4">
+				<input type="hidden" name="answer_choice_min_3" id="answer_choice_min_3" value="1">
+
+				<div class="q">Q3</div>
+
+				<div class="cntn">
+					<pre>방역당국(보건소, 지자체)으로부터 PCR 검사대상자로 통보받은 적이 있습니까?</pre>
+					<p class="required">*필수 응답 문항</p>
+				</div>
+			</div>
+
+			<div class="answer-area clearfix">
+
+			<div class="answer choice choice-9">
+				<div class="q">
+					<input type="radio" name="quest_3" id="quest_3_0" value="1"  questinfo="">
+				</div>
+				<div class="cntn">
+					<label for="quest_3_0" style="white-space: nowrap;">
+							예
+					</label>
+				</div>
+			</div>			
+			<div class="answer choice choice-9">
+				<div class="q">
+					<input type="radio" name="quest_3" id="quest_3_1" value="2" questinfo="">
+				</div>
+				<div class="cntn">
+					<label for="quest_3_1" style="white-space: nowrap;">
+							아니오
+					</label>
+				</div>
+			</div>			
+			</div>
+		</div>
+
+		<div class="survey_sb_list page1" id="quest_main0_4" style="" optional="false">
+			<div class="quest">
+				<input type="hidden" class="quest_page" value="1">
+				<input type="hidden" name="quest_tc_4" id="quest_tc_4" value="1">
+				<input type="hidden" class="quest_evalue_type" value="1">
+				<input type="hidden" class="quest_answer_form" value="1">
+				<input type="hidden" name="answer_choice_cnt_4" id="answer_choice_cnt_4" value="1">
+                <input type="hidden" name="answer_input_cnt_4" id="answer_input_cnt_4" value="4">
+				<input type="hidden" name="answer_choice_min_4" id="answer_choice_min_4" value="1">
+
+				<div class="q">Q4</div>
+
+				<div class="cntn">
+					<pre>방역당국(보건소, 지자체)으로부터 PCR 검사대상자로 통보받은 적이 있습니까?</pre>
+					<p class="required">*필수 응답 문항</p>
+				</div>
+			</div>
+
+			<div class="answer-area clearfix">
+
+			<div class="answer choice choice-9">
+				<div class="q">
+					<input type="radio" name="quest_4" id="quest_4_0" value="1"  questinfo="">
+				</div>
+				<div class="cntn">
+					<label for="quest_4_0" style="white-space: nowrap;">
+							예
+					</label>
+				</div>
+			</div>			
+			<div class="answer choice choice-9">
+				<div class="q">
+					<input type="radio" name="quest_4" id="quest_4_1" value="2" questinfo="">
+				</div>
+				<div class="cntn">
+					<label for="quest_4_1" style="white-space: nowrap;">
+							아니오
+					</label>
+				</div>
+			</div>			
+			</div>
+		</div>
+
+		<div class="survey_sb_list page1" id="quest_main0_5" style="" optional="false">
+			<div class="quest">
+				<input type="hidden" class="quest_page" value="1">
+				<input type="hidden" name="quest_tc_5" id="quest_tc_5" value="1">
+				<input type="hidden" class="quest_evalue_type" value="1">
+				<input type="hidden" class="quest_answer_form" value="1">
+				<input type="hidden" name="answer_choice_cnt_5" id="answer_choice_cnt_5" value="1">
+                <input type="hidden" name="answer_input_cnt_5" id="answer_input_cnt_5" value="2">
+				<input type="hidden" name="answer_choice_min_5" id="answer_choice_min_5" value="1">
+
+				<div class="q">Q5</div>
+
+				<div class="cntn">
+					<pre>아래 고위험 시설을 방문한 적이 있습니까?</pre>
+					<p class="required">*클럽,룸살롱, 단란주점, 스텐드바, 캬바레, 노래클럽, 노래바, 감성주점, 콜라텍,
+						헌팅포차, 홍보관, 뷔페, 실내 스텐딩 공연장 및 집단운동시설, 노래방(코인), 대형학원(300명), 찜질방, 사우나</p>
+					<p class="required">*필수 응답 문항</p>
+				</div>
+			</div>
+
+			<div class="answer-area clearfix">
+	
+			<div class="answer choice choice-9">
+				<div class="q">
+					<input type="radio" name="quest_5" id="quest_5_0" value="1"questinfo="">
+				</div>
+				<div class="cntn">
+					<label for="quest_5_0">
+							예
+					</label>
+				</div>
+			</div>			
+	
+			<div class="answer choice choice-9">
+				<div class="q">
+					<input type="radio" name="quest_5" id="quest_5_1" value="2" questinfo="">
+				</div>
+				<div class="cntn">
+					<label for="quest_5_1">
+							아니오
+					</label>
+				</div>
+			</div>			
+			</div>
+		</div>
+		<div class="survey_sb_list page1" id="quest_main0_6" style="" optional="false">
+			<div class="quest">
+				<input type="hidden" class="quest_page" value="1">
+				<input type="hidden" name="quest_tc_6" id="quest_tc_6" value="1">
+				<input type="hidden" class="quest_evalue_type" value="1">
+				<input type="hidden" class="quest_answer_form" value="1">
+				<input type="hidden" name="answer_choice_cnt_6" id="answer_choice_cnt_6" value="1">
+                <input type="hidden" name="answer_input_cnt_6" id="answer_input_cnt_6" value="2">
+				<input type="hidden" name="answer_choice_min_6" id="answer_choice_min_6" value="1">
+				<div class="q">Q6</div>
+
+				<div class="cntn">
+					<pre>아래 인원과 만난적이 있습니까?</pre>
+					<p class="required">*확진자, 확진자 접촉자, PCR검사 대상자, 외국인이나 해외 입국자</p>
+					<p class="required">*필수 응답 문항</p>
+				</div>
+			</div>
+			<div class="answer-area clearfix">
+			<div class="answer choice choice-9">
+				<div class="q">
+					<input type="radio" name="quest_6" id="quest_6_0" value="1" questinfo="">
+				</div>
+				<div class="cntn">
+					<label for="quest_6_0">
+							예
+					</label>
+				</div>
+			</div>			
+			<div class="answer choice choice-9">
+				<div class="q">
+					<input type="radio" name="quest_6" id="quest_6_1" value="2" questinfo="">
+				</div>
+				<div class="cntn">
+					<label for="quest_6_1">
+							아니오
+					</label>
+				</div>
+			</div>			
+
+			</div>
+		</div>
+		<div class="survey_sb_list page1" id="quest_main0_7" style="" optional="false">
+			<div class="quest">
+				<input type="hidden" class="quest_page" value="1">
+				<input type="hidden" name="quest_tc_7" id="quest_tc_7" value="1">
+				<input type="hidden" class="quest_evalue_type" value="1">
+				<input type="hidden" class="quest_answer_form" value="1">
+				<input type="hidden" name="answer_choice_cnt_7" id="answer_choice_cnt_7" value="1">
+                <input type="hidden" name="answer_input_cnt_7" id="answer_input_cnt_7" value="2">
+				<input type="hidden" name="answer_choice_min_7" id="answer_choice_min_7" value="1">
+				<div class="q">Q7</div>
+
+				<div class="cntn">
+					<pre>확진자가 다녀간 장소에 동선이 겹친 적이 있습니까?</pre>
+					<p class="required">*필수 응답 문항</p>
+				</div>
+			</div>
+
+			<div class="answer-area clearfix">
+
+			<div class="answer choice choice-9">
+				<div class="q">
+					<input type="radio" name="quest_7" id="quest_7_0" value="1" questinfo="">
+				</div>
+				<div class="cntn">
+					<label for="quest_7_0">
+							예
+					</label>
+				</div>
+			</div>			
+
+			<div class="answer choice choice-9">
+				<div class="q">
+					<input type="radio" name="quest_7" id="quest_7_1" value="2" questinfo="">
+				</div>
+				<div class="cntn">
+					<label for="quest_7_1">
+							아니요
+					</label>
+				</div>
+			</div>			
+
+			</div>
+		</div>
+		<div class="survey_sb_list page1" id="quest_main0_8" style="" optional="false">
+			<div class="quest">
+				<input type="hidden" class="quest_page" value="1">
+				<input type="hidden" name="quest_tc_8" id="quest_tc_8" value="1">
+				<input type="hidden" class="quest_evalue_type" value="1">
+				<input type="hidden" class="quest_answer_form" value="1">
+				<input type="hidden" name="answer_choice_cnt_8" id="answer_choice_cnt_8" value="1">
+                <input type="hidden" name="answer_input_cnt_8" id="answer_input_cnt_8" value="2">
+				<input type="hidden" name="answer_choice_min_8" id="answer_choice_min_8" value="1">
+				<div class="q">Q8</div>
+				<div class="cntn large-cntn">
+					<pre>외부활동(종교집회, 동호회)에 참여한 적이 있습니까?</pre>
+					<p class="required">*필수 응답 문항</p>
+				</div>
+			</div>
+			<div class="answer-area clearfix">
+
+			<div class="answer choice choice-9">
+				<div class="q">
+					<input type="radio" name="quest_8" id="quest_8_0" value="1" questinfo="">
+				</div>
+				<div class="cntn">
+					<label for="quest_8_0">
+							예
+					</label>
+				</div>
+			</div>			
+
+			<div class="answer choice choice-9">
+				<div class="q">
+					<input type="radio" name="quest_8" id="quest_8_1" value="2" questinfo="">
+				</div>
+				<div class="cntn">
+					<label for="quest_8_1">
+							아니오
+					</label>
+				</div>
+			</div>			
+
+			</div>
+		</div>
+
+		<div class="survey_sb_list page1" id="quest_main0_9" style="" optional="false">
+			<div class="quest">
+				<input type="hidden" class="quest_page" value="1">
+				<input type="hidden" name="quest_tc_9" id="quest_tc_9" value="1">
+				<input type="hidden" class="quest_evalue_type" value="1">
+				<input type="hidden" class="quest_answer_form" value="1">
+				<input type="hidden" name="answer_choice_cnt_9" id="answer_choice_cnt_9" value="1">
+                <input type="hidden" name="answer_input_cnt_9" id="answer_input_cnt_9" value="2">
+				<input type="hidden" name="answer_choice_min_9" id="answer_choice_min_9" value="1">
+
+				<div class="q">Q9</div>
+
+				<div class="cntn">
+					<pre>동거 가족 중 설문문항 2~8 사항에 해당하는 가족이 있나요?
+                    </pre>
+					<p class="required">*필수 응답 문항</p>
+				</div>
+			</div>
+
+			<div class="answer-area clearfix">
+			<div class="answer choice choice-9">
+				<div class="q">
+					<input type="radio" name="quest_9" id="quest_9_0" value="1" questinfo="">
+				</div>
+				<div class="cntn">
+					<label for="quest_9_0">
+							예
+					</label>
+				</div>
+			</div>			
+				
+			<div class="answer choice choice-9">
+				<div class="q">
+					<input type="radio" name="quest_9" id="quest_9_1" value="2" questinfo="">
+				</div>
+				<div class="cntn">
+					<label for="quest_9_1">
+							아니오
+					</label>
+				</div>
+			</div>			
+
+			</div>
+		</div>
+
+		<div class="survey_sb_list page1" id="quest_main0_10" style="" optional="false">
+			<div class="quest">
+				<input type="hidden" class="quest_page" value="1">
+				<input type="hidden" name="quest_tc_10" id="quest_tc_10" value="1">
+				<input type="hidden" class="quest_evalue_type" value="1">
+				<input type="hidden" class="quest_answer_form" value="1">
+				<input type="hidden" name="answer_choice_cnt_10" id="answer_choice_cnt_10" value="1">
+                <input type="hidden" name="answer_input_cnt_10" id="answer_input_cnt_10" value="1">
+				<input type="hidden" name="answer_choice_min_10" id="answer_choice_min_10" value="1">
+
+				<div class="q">Q10</div>
+
+				<div class="cntn large-cntn">
+					<pre>2~9번 답변 중 "예"라 답변하신 문항이 있으십니까?</pre>
+					<p class="required">*필수 응답 문항</p>
+				</div>
+			</div>
+			<div class="answer-area clearfix">
+
+			<div class="answer choice choice-10">
+				<div class="q">
+					<input type="radio" name="quest_10" id="quest_10_0" value="1" questinfo="">
+				</div>
+				<div class="cntn">
+					<label for="quest_10_0">
+							예
+					</label>
+				</div>
+            </div>		
+            <div class="answer choice choice-10">
+				<div class="q">
+					<input type="radio" name="quest_10" id="quest_10_0" value="2" questinfo="">
+				</div>
+				<div class="cntn">
+					<label for="quest_10_1">
+							아니오
+					</label>
+				</div>
+			</div>		
+
+			</div>
+		</div>
+		
+		<div class="survey_ex_list page1" style="">
+				
+			<div class="guide"><p>개인정보 수집 및 이용 동의하시면 응답 완료하시기 바랍니다.<br>- 목적 : 코로나 바이러스 관련 방문자 확인<br>- 항목 : 이름, 연락처, 생년월일<br>- 보유기간 : 사용 목적 달성후 즉시 폐기</p><p><br></p><p><br></p></div>
+		</div>
+
+	</div>
+
+</div>
+<div class="footer">
+	<div class="container">
+		<div class="clearfix">
+			<div class="pull-left" id="btnPrev" style="display:none;">
+				<input type="button" value="이전" class="btn-prev">
+			</div> 
+			<div>
+			<input type="button" value="다음" id="btnNext"  class="btn-next" style="display:none"> 
+			<input type="submit" value="응답 완료" id="btnSave" class="btn-next" style="">
+			</div>
+		</div>
+	</div>
+</div>
+
+	</form>
+
+
+</body></html>
