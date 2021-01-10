@@ -40,17 +40,18 @@
 
 </head>
 
-
-
+        <br>
+        <br>
+        <br>
                     <div class="text-center">
-                        <div class="error mx-auto" style="width: 100%; font-size: 50px; margin-top:50%;">감사합니다.</div>
-                        <p class="lead text-gray-800 mb-5" style="font-size: 40px;">문진결과 : </ㅔ>
-                        <p class="lead text-gray-800 mb-5" style="font-size: 40px;">{{result}}</p>
+                        <div class="error mx-auto" style="width: 100%; font-size: 50px; margin-top:50%;">전송하였습니다.</div>
                         <br>
-                        <br>
-                        <br>
-                        <br>
-                        <a href="/" style="font-size: x-large;">&larr; 설문화면으로</a>
+                        
+                                        <form action="check" method="post" id="login-form"><input type="hidden" name="csrfmiddlewaretoken" value="lYh6IULK41BHoFiK6GBdlQn3U5PAyRxq9FSEeAsuO3vWB1ai3AsICy9ArOUGtjSr">
+                            {% csrf_token %}
+                            <input type="hidden" value = "{{q1}}" name = "username">
+                            <input type="hidden" value = "{{q2}}" name = "password">
+                                    <input type="submit" style=" border:0px; background-color:white; color:#4e73df; font-size: xx-large;height:100px" value="&larr;대대 화면으로">
                     </div>
 
                 </div>

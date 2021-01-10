@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <!-- saved from url=(0051)http://192.168.1.101:8080/admin/login/?next=/admin/ -->
 <html lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>문진표 로그인</title>
+<title>문진표 관리자 로그인</title>
 <link rel="stylesheet" type="text/css" href="{% static 'css\base.css'%}"> 
 
   <link rel="stylesheet" type="text/css" href="{% static 'css\nav_sidebar.css'%}">
@@ -36,7 +36,7 @@
     <div id="header" style="background-color: #2056AC">
         <div id="branding">
         
-<h1 id="site-name"><a href="/" style="font-weight: bolder; font-size: larger; font-family: Verdana, Geneva, Tahoma, sans-serif;">코로나 문진표</a></h1>
+<h1 id="site-name"><a href="/" style="font-weight: bolder; font-size: larger; font-family: Verdana, Geneva, Tahoma, sans-serif;">코로나 문진표 관리자 계정</a></h1>
 
         </div>
         
@@ -63,11 +63,11 @@
 
 
 
-<form action="home" method="post" id="login-form"><input type="hidden" name="csrfmiddlewaretoken" value="lYh6IULK41BHoFiK6GBdlQn3U5PAyRxq9FSEeAsuO3vWB1ai3AsICy9ArOUGtjSr">
+<form action="check" method="post" id="login-form"><input type="hidden" name="csrfmiddlewaretoken" value="lYh6IULK41BHoFiK6GBdlQn3U5PAyRxq9FSEeAsuO3vWB1ai3AsICy9ArOUGtjSr">
   {% csrf_token %}
   <div class="form-row">
     
-    <label class="required" for="id_username">사용자코드:</label> <input type="text" name="username" value="" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username">
+    <label class="required" for="id_username">아이디:</label> <input type="text" name="username" value="" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username">
   </div>
   <div class="form-row">
     
@@ -79,7 +79,7 @@
   </div>
 
 </form>
-
+<div style="font-size: 13px; color: red;">계정이 일치하지 않습니다.</div>
 </div>
 
           

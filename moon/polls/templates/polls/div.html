@@ -1,0 +1,219 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{{name1}}</title>
+    <style>
+        td{
+            text-align: center;
+            width: 80px; height: 50px;
+        }
+        th{
+            text-align: center;
+        }
+        a{
+            background-color: transparent; /* Green */
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;    
+            border-style: none
+        }
+    </style>
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="{% static 'css/sb-admin-2.min.css'%}" rel="stylesheet">
+
+</head>
+<body id="page-top">
+    <!-- Project Card Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <a id = "go-back" class="m-0 font-weight-bold text-primary" style = "text-align : left; float : left; font-size: x-large; display: inline;" href = "{% url 'div' %}"> &#8592;</a>
+            <h6 class="m-0 font-weight-bold text-primary" style = "text-align : center; margin-top : 11px!important">{{year}}년 {{month}}월 {{day}}일</h6>
+        </div>
+        <div class="card-body">
+            <h4 class="small font-weight-bold">문진표 실시현황 <span
+                    class="float-right">{{number_all}}%</span></h4>
+            <div class="progress mb-4">
+                <div class="{{style_all}}" role="progressbar" style="width:{{number_all}}%"
+                    aria-valuenow="{{number_all}}" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+    </div>
+
+                    <form action="submit" method="post" id="login-form"><input type="hidden" name="csrfmiddlewaretoken" value="lYh6IULK41BHoFiK6GBdlQn3U5PAyRxq9FSEeAsuO3vWB1ai3AsICy9ArOUGtjSr">
+                            {% csrf_token %}
+                            <input type="hidden" value = "{{xx}}" name = "non">
+                            <input type="hidden" value = "{{q1}}" name = "q1">
+                            <input type="hidden" value = "{{q2}}" name = "q2">
+                                    <input type="submit" class="btn btn-primary btn-icon-split btn-lg" style="width:100%;; height:45px" value="제출하기">
+                                    <div class ="{{danger}}"style="margin-bottom:5%; padding:0px"> <div class = "{{danger_2}}" style="font-size: large; font-weight:bold; color:black;padding:0px; text-align:center">{{danger_3}}</div></div>
+    <div style="flex-direction: row;">
+                    <!-- Begin Page Content -->
+                <div class="container-fluid" style="width:100%; margin:0px; float:left; padding:0px">
+
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4" style="width:100%">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary" style="text-align:center">전체현황</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 20%; text-align: center;">이름</th>
+                                            <th style="width: 80%; text-align: center;">현황</th>
+
+                                        </tr>
+                                    </thead>
+
+
+
+                                    <tbody>
+
+                                        <tr>
+                                        <form action="check" name="form" id="form" method="post"><input type="hidden" name="csrfmiddlewaretoken" value="lYh6IULK41BHoFiK6GBdlQn3U5PAyRxq9FSEeAsuO3vWB1ai3AsICy9ArOUGtjSr">
+                                        	{% csrf_token %}
+                                            <input type="hidden" value ="8divinfo" name="username">
+                                            <input type="hidden" value ="21sus1dnjf!" name="password">
+                                            <td style="text-align: center; width:30px; font-size:smaller"><input type="submit" value="정보통신" style="width:100%; height:100%; border:none; background-color:white"></td>
+                                            <td class="{{style_정보통신대대}}" role="progressbar" style="width:{{number_정보통신대대}}%"aria-valuenow="{{number_정보통신대대}}" aria-valuemin="0" aria-valuemax="100">{{number_정보통신대대}}%</td>
+                                            <!-- <td class = {{style_정보통신대대}} role = "progressbar" style = "width:{{number_정보통신대대}}%"aria-valuenow="{{number_정보통신대대}}" aria-valuemin="0" aria-valuemax="100">{{number_정보통신대대}}%</td> -->
+                                        </tr>
+                                        </form>
+                                        <tr>
+                                            <td style="text-align: center; width:30px; font-size:smaller">50포병대대</td>
+                                            <td  class="progress-bar bg-danger" role="progressbar" style="width:66%; background-color:#1cc88a"aria-valuenow="{{number_all}}" aria-valuemin="0" aria-valuemax="100">66%</td>
+                                            <!-- <td  class={{style_50포병대대}} role="progressbar" style="width:{{number_50포병대대}}%; background-color:#1cc88a"aria-valuenow="{{number_50포병대대}}" aria-valuemin="0" aria-valuemax="100">{{number_50포병대대}}%</td> -->
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center; width:30px; font-size:smaller">95포병대대</td>
+                                            <td  class="progress-bar bg-danger" role="progressbar" style="width:41%; background-color:#1cc88a"aria-valuenow="{{number_all}}" aria-valuemin="0" aria-valuemax="100">41%</td>
+                                            <!-- <td  class={{style_95포병대대}} role="progressbar" style="width:{{number_95포병대대}}%; background-color:#1cc88a"aria-valuenow="{{number_95포병대대}}" aria-valuemin="0" aria-valuemax="100">{{number_95포병대대}}%</td> -->
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center; width:30px; font-size:smaller">직할공병대대</td>
+                                            <td  class="progress-bar bg-danger" role="progressbar" style="width:11%; background-color:#1cc88a"aria-valuenow="{{number_all}}" aria-valuemin="0" aria-valuemax="100">11%</td>
+                                            <!-- <td  class={{style_직할공병대대}} role="progressbar" style="width:{{number_직할공병대대}}%; background-color:#1cc88a"aria-valuenow="{{number_직할공병대대}}" aria-valuemin="0" aria-valuemax="100">{{number_직할공병대대}}%</td> -->
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center; width:30px; font-size:smaller">의무대</td>
+                                            <td  class="progress-bar bg-danger" role="progressbar" style="width:22%; background-color:#1cc88a"aria-valuenow="{{number_all}}" aria-valuemin="0" aria-valuemax="100">22%</td>
+                                            <!-- <td  class={{style_의무대}} role="progressbar" style="width:{{number_의무대}}%; background-color:#1cc88a"aria-valuenow="{{number_의무대}}" aria-valuemin="0" aria-valuemax="100">{{number_의무대}}%</td> -->
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center; width:30px; font-size:smaller">군사경찰대</td>
+                                            <td  class="progress-bar bg-danger" role="progressbar" style="width:50%; background-color:#1cc88a"aria-valuenow="{{number_all}}" aria-valuemin="0" aria-valuemax="100">50%</td>
+                                            <!-- <td  class={{style_군사경찰대}} role="progressbar" style="width:{{number_군사경찰대}}%; background-color:#1cc88a"aria-valuenow="{{number_군사경찰대}}" aria-valuemin="0" aria-valuemax="100">{{number_군사경찰대}}%</td> -->
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center; width:30px; font-size:smaller">본부대</td>
+                                            <td  class="progress-bar bg-danger" role="progressbar" style="width:88%; background-color:#1cc88a"aria-valuenow="{{number_all}}" aria-valuemin="0" aria-valuemax="100">88%</td>
+                                            <!-- <td  class={{style_본부대}} role="progressbar" style="width:{{number_본부대}}%; background-color:#1cc88a"aria-valuenow="{{number_본부대}}" aria-valuemin="0" aria-valuemax="100">{{number_본부대}}%</td> -->
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center; width:30px; font-size:smaller">참모처</td>
+                                            <td  class="progress-bar bg-success" role="progressbar" style="width:100%; background-color:#1cc88a"aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</td>
+                                            <!-- <td  class={{style_참모처}} role="progressbar" style="width:{{number_참모처}}%; background-color:#1cc88a"aria-valuenow="{{number_참모처}}" aria-valuemin="0" aria-valuemax="100">{{number_참모처}}%</td> -->                                            
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+
+
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+</div>
+
+
+
+
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; K.S.H</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+

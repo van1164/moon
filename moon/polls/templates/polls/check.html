@@ -11,6 +11,23 @@
     <meta name="author" content="">
 
     <title>{{name1}}</title>
+    <style>
+        td{
+            text-align: center;
+            width: 80px; height: 50px;
+            color:black
+        }
+        th{
+            text-align: center;
+        }
+        a{
+            background-color: transparent; /* Green */
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;    
+            border-style: none
+        }
+    </style>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -26,126 +43,241 @@
     <!-- Project Card Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">{{name1}}</h6>
+            <a id = "go-back" class="m-0 font-weight-bold text-primary" style = "text-align : left; float : left; font-size: x-large; display: inline;" href = "{% url 'div' %}"> &#8592;</a>
+            <h6 class="m-0 font-weight-bold text-primary" style = "text-align : center; margin-top : 11px!important">{{name1}}</h6>
         </div>
         <div class="card-body">
             <h4 class="small font-weight-bold">문진표 실시현황 <span
                     class="float-right">{{number_all}}%</span></h4>
             <div class="progress mb-4">
-                <div class="progress-bar bg-danger" role="progressbar" style="width:{{number_all}}%"
+                <div class="{{style_all}}" role="progressbar" style="width:{{number_all}}%"
                     aria-valuenow="{{number_all}}" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <h4 class="small font-weight-bold">현재 체온이 37.5도 이상입니까? <span
-                    class="float-right">아니요</span></h4>
-            <div class="progress mb-4">
-                <div class="progress-bar bg-warning" role="progressbar" style="width: {{count_1}}%"
-                    aria-valuenow="{{count_1}}" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <h4 class="small font-weight-bold">방역당국(보건소, 지자체)으로부터 PCR 검사대상자로 통보받은 적이 있습니까? <span
-                    class="float-right">아니요</span></h4>
-            <div class="progress mb-4">
-                <div class="progress-bar" role="progressbar" style="width: {{count_2}}%"
-                    aria-valuenow="{{count_2}}" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <h4 class="small font-weight-bold">고위험 시설을 방문한 적이 있습니까? <span
-                    class="float-right">아니요</span></h4>
-            <div class="progress mb-4">
-                <div class="progress-bar bg-info" role="progressbar" style="width: {{count_3}}%"
-                    aria-valuenow="{{count_3}}" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <h4 class="small font-weight-bold">확진자, 확진자 접촉자등과 만난적이 있습니까? <span
-                    class="float-right">아니요</span></h4>
-            <div class="progress">
-                <div class="progress-bar bg-success" role="progressbar" style="width:{{count_4}}%"
-                    aria-valuenow="{{count_4}}%" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-            <h4 class="small font-weight-bold" style="margin-top: 20px;">확진자가 다녀간 장소에 동선이 겹친 적이 있습니까? <span
-                class="float-right">아니요</span></h4>
-            <div class="progress mb-4">
-                <div class="progress-bar bg-warning" role="progressbar" style="width: {{count_5}}%"
-                    aria-valuenow="{{count_5}}" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <h4 class="small font-weight-bold">외부활동(종교집회, 동호회)에 참여한 적이 있습니까? <span
-                class="float-right">아니요</span></h4>
-            <div class="progress mb-4">
-                <div class="progress-bar bg-info" role="progressbar" style="width: {{count_6}}%"
-                    aria-valuenow="{{count_6}}%" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
-            <h4 class="small font-weight-bold">동거 가족 중 설문문항 2~8 사항에 해당하는 가족이 있나요? <span
-                class="float-right">아니요</span></h4>
-            <div class="progress">
-                <div class="progress-bar bg-success" role="progressbar" style="width: {{count_7}}%;"
-                aria-valuenow="{{count_7}}%" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-            <h4 class="small font-weight-bold" style="margin-top: 20px;">2~9번 답변 중 "예"라 답변하신 문항이 있으십니까? <span
-                class="float-right">아니요</span></h4>
-            <div class="progress mb-4">
-                <div class="progress-bar bg-warning" role="progressbar" style="width: {{count_8}}%"
-                aria-valuenow="{{count_8}}%" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
     </div>
-    
-
-
-
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
+    <div style="flex-direction: row;">
+                <div class="container-fluid" style="width:100%; margin:0px; float:left; padding:0px">
 
                     <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">{{name1}}</h6>
-                        </div>
+                    <div class="card shadow mb-4" style="width:100%">
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>이름</th>
-                                            <th>소속</th>
-                                            <th>계급</th>
-                                            <th>Q2</th>
-                                            <th>Q3</th>
-                                            <th>Q4</th>
-                                            <th>Q5</th>
-                                            <th>Q6</th>
-                                            <th>Q7</th>
-                                            <th>Q8</th>
-                                            <th>Q9</th>
-                                            <th>Q10</th>
+                                            <th style="width: 60px; text-align: center;">총누적자</th>
+                                            <th style="width: 80px; text-align: center;">추가 확진자</th>
+
                                         </tr>
                                     </thead>
 
 
 
                                     <tbody>
-                                        {%for j in result%}
+
                                         <tr>
-                                        {%for i in j%}
-                                        {% if i == '2'%}
-                                        <td style="background-color: #1cc88a; color:white">No</td>
-                                        {% elif i == '1'%}
-                                        <td style="background-color: #e74a3b; color:white">Yes</td>
-                                        {% else %}
-                                        <td>{{i}}</td>
-                                        {% endif %}
-                                        {% endfor %}
+                                            <td style="text-align: center; width:60px;">1000034명</td>
+                                            <td style="text-align: center; width:60px;">1002명</td>
+                                        
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+                <form action="submit" method="post" id="login-form"><input type="hidden" name="csrfmiddlewaretoken" value="lYh6IULK41BHoFiK6GBdlQn3U5PAyRxq9FSEeAsuO3vWB1ai3AsICy9ArOUGtjSr">
+                            {% csrf_token %}
+                            <input type="hidden" value = "{{xx}}" name = "non">
+                            <input type="hidden" value = "{{q1}}" name = "q1">
+                            <input type="hidden" value = "{{q2}}" name = "q2">
+                                    <input type="submit" class="btn btn-primary btn-icon-split btn-lg" style="width:100%;; height:45px" value="제출하기">
+                                    <div class ="{{danger}}"style="margin-bottom:5%; padding:0px"> <div class = "{{danger_2}}" style="font-size: large; font-weight:bold; color:black;padding:0px; text-align:center">{{danger_3}}</div></div>
+                    <!-- Begin Page Content -->
+
+                <div class="container-fluid" style="width:49.5%; margin:0px; float:left; padding:0px">
+
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4" style="width:100%">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary" style="text-align:center">인원현황</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 60px; text-align: center;">구분</th>
+                                            <th style="width: 80px; text-align: center;">인원</th>
+
+                                        </tr>
+                                    </thead>
+
+
+
+                                    <tbody>
+
+                                        <tr>
+                                            <td style="text-align: center; width:60px; font-size:smaller">총원</td>
+                                            <td>{{total}}</td>
+                                        
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center; width:60px; font-size:smaller">정상출근</td>
+                                            <td>{{yes}}</td>
+                                        
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center; width:60px; font-size:smaller">재택근무</td>
+                                            <td>{{no}}</td>
+                                        
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center; width:60px; font-size:smaller">설문 미실시자</td>
+                                            <td>{{xx}}</td>
+                                        
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center; width:60px; font-size:smaller">출근율</td>
+                                            <td>{{per}}%</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+
+
+                                    <!-- Begin Page Content -->
+                <div class="container-fluid" style="width:49.5%; margin:0px; float:right; padding:0px">
+
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4" style="width:100%">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary" style="text-align:center">재택근무</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 50px; text-align: center; font-size:smaller">구분</th>
+                                            <th style="width: 100px; text-align: center;">이름</th>
+
+                                        </tr>
+                                    </thead>
+
+
+
+                                    <tbody>
+                                        {% for i in house %}
+                                        <tr>
+                                            <td style="text-align: center; width:70px">{{i.idx}}</td>
+                                        <form action="check_solo" name="form" id="form" method="post"><input type="hidden" name="csrfmiddlewaretoken" value="lYh6IULK41BHoFiK6GBdlQn3U5PAyRxq9FSEeAsuO3vWB1ai3AsICy9ArOUGtjSr">
+                                        	{% csrf_token %}
+                                            <input type="hidden" value ="{{i.usercode}}" name="usercode">
+                                            <input type="hidden" value ="{{i.name}}" name="username">
+                                            <td style="text-align: center; width:30px;"><input type="submit" value="{{i.name}}" style="width:100%; height:100%; border:none; background-color:white"></td>
+                                        </form>
                                         </tr>
                                         {% endfor %}
-                                        {% for k in current%}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+</div>
+
+
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">{{name1}}</h6>
+        </div>
+        <div class="card-body">
+
+
+    </div>
+    <div style="flex-direction: row;">
+                    <!-- Begin Page Content -->
+                <div class="container-fluid" style="width:49.5%; margin:0px; float:left; padding:0px">
+
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4" style="width:100%">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary" style="text-align:center">실시자</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
                                         <tr>
-                                            {% for a in k %}
-                                            <td>{{a}}</td>
-                                            {% endfor %}
-                                            <td>미실시</td>
-                                            <td>미실시</td>
-                                            <td>미실시</td>
-                                            <td>미실시</td>
-                                            <td>미실시</td>
-                                            <td>미실시</td>
-                                            <td>미실시</td>
-                                            <td>미실시</td>
-                                            <td>미실시</td>
+                                            <th style="width: 10px; text-align: center;"></th>
+                                            <th style="width: 80px; text-align: center;">이름</th>
+
+                                        </tr>
+                                    </thead>
+
+
+
+                                    <tbody>
+                                    {% for i in silsi%}
+                                        <tr>
+                                            <td style="text-align: center; width:10px; font-size:smaller">{{i.idx}}</td>
+                                            <td>{{i.name}}</td>
+                                        
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+
+
+                                    <!-- Begin Page Content -->
+                <div class="container-fluid" style="width:49.5%; margin:0px; float:right; padding:0px">
+
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4" style="width:100%">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary" style="text-align:center">미실시자</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 10px; text-align: center;"></th>
+                                            <th style="width: 100px; text-align: center;">이름</th>
+
+                                        </tr>
+                                    </thead>
+
+
+
+                                    <tbody>
+                                        {% for i in current %}
+                                        <tr>
+                                            <td style="text-align: center; width:10px">{{i.idx}}</td>
+                                            <td>{{i.name}}</td>
                                         
                                         </tr>
                                         {% endfor %}
@@ -160,6 +292,7 @@
 
             </div>
             <!-- End of Main Content -->
+</div>
 
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
